@@ -12,7 +12,7 @@
     <artifactId>srv</artifactId>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
         <swagger.version>2.9.2</swagger.version>
     </properties>
 
@@ -24,6 +24,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
