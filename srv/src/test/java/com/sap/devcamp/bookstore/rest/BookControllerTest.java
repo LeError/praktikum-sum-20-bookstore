@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -36,7 +37,7 @@ public class BookControllerTest {
         book2.setIsbn(UUID.randomUUID().toString());
         book3 = new Book();
         book3.setIsbn(UUID.randomUUID().toString());
-        books = List.of(book1, book2, book3);
+        books = Arrays.asList(book1, book2, book3);
     }
 
     @Test public void doCheck_getAllBooks_expectEmptyList () {

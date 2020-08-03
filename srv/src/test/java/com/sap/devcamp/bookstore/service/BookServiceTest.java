@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -27,7 +28,7 @@ public class BookServiceTest {
     }
 
     @Test public void doCheck_getAllBooks_success () {
-        List<Book> mockBooks = List.of(mock(Book.class), mock(Book.class));
+        List<Book> mockBooks = Arrays.asList(mock(Book.class), mock(Book.class));
         when(bookRepository.findAll()).thenReturn(mockBooks);
         cut.getAllBooks();
     }
@@ -45,7 +46,7 @@ public class BookServiceTest {
     }
 
     @Test public void doCheck_getBookByAuthor_success () {
-        List<Book> mockBooks = List.of(mock(Book.class), mock(Book.class));
+        List<Book> mockBooks = Arrays.asList(mock(Book.class), mock(Book.class));
         when(bookRepository.findBooksByAuthorLike(anyString())).thenReturn(mockBooks);
         cut.getBookByAuthor("test");
     }
@@ -77,13 +78,13 @@ public class BookServiceTest {
     }
 
     @Test public void doCheck_saveAllBooks_success () {
-        List<Book> mockBooks = List.of(mock(Book.class), mock(Book.class));
+        List<Book> mockBooks = Arrays.asList(mock(Book.class), mock(Book.class));
         when(bookRepository.existsBookByIsbn(any())).thenReturn(false);
         cut.saveAllBooks(mockBooks);
     }
 
     @Test (expected = EntityExistsException.class) public void doCheck_saveAllBooks_fail () {
-        List<Book> mockBooks = List.of(mock(Book.class), mock(Book.class));
+        List<Book> mockBooks = Arrays.asList(mock(Book.class), mock(Book.class));
         when(bookRepository.existsBookByIsbn(any())).thenReturn(true);
         cut.saveAllBooks(mockBooks);
     }
