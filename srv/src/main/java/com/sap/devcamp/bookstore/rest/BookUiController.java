@@ -23,18 +23,15 @@ public class BookUiController {
     }
 
     @GetMapping (path = "/all", produces = MediaType.APPLICATION_JSON_VALUE) public String getAllBooks (Model model) {
-        model.addAttribute("books", bookService.getAllBooks());
-        return "books";
+        return null;
     }
 
     @GetMapping (path = "/author/{author}", produces = MediaType.APPLICATION_JSON_VALUE) public String getAllBooksOfAuthor (@PathVariable (name = "author") String author, Model model) {
-        model.addAttribute("books", bookService.getBookByAuthor(author));
-        return "books";
+        return null;
     }
 
     @GetMapping (path = "/book/{isbn}", produces = MediaType.APPLICATION_JSON_VALUE) public String getBook (@PathVariable ("isbn") String isbn, Model model) {
-        model.addAttribute("books", bookService.getBook(isbn));
-        return "books";
+        return null;
     }
 
 }
