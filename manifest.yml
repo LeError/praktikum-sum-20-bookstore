@@ -1,0 +1,11 @@
+---
+applications:
+  - name: praktikum-demo
+    memory: 1024M
+    path: srv/target/srv-0.0.1-SNAPSHOT.jar
+    stack: cflinuxfs3
+    buildpacks:
+      - https://github.com/cloudfoundry/java-buildpack
+    env:
+      SPRING_PROFILES_ACTIVE: cloud
+    services:
